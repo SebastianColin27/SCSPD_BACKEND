@@ -1,5 +1,8 @@
 package com.scspd.backendSCSPD.models;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.*;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -15,12 +18,13 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 @Document("programa_academico")
-
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ProgramasAcademicos {
     @Id
-    private ObjectId idProgramaAcademico;
+    @JsonSerialize(using = ToStringSerializer.class)
+    private ObjectId id;
     private String nombreProgramasAcademico;
-    private String DescripcionProgramasAcademico;
-    @DBRef
-    private List<UnidadesAprendizaje> unidadesAprendizaje;
+    private String descripcionProgramasAcademico;
+  /*  @DBRef
+    private List<UnidadesAprendizaje> unidadesAprendizaje;*/
 }

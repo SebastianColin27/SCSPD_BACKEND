@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UnidadesAprendizajeRepository  extends MongoRepository<UnidadesAprendizaje, ObjectId> {
-    List<UnidadesAprendizaje> findByProgramaAcademicoId(ObjectId programaAcademicoId);
+public interface  UnidadesAprendizajeRepository  extends MongoRepository<UnidadesAprendizaje, ObjectId> {
+    List<UnidadesAprendizaje> findByProgramaAcademicoId(ObjectId programaId);
+    List<UnidadesAprendizaje> findByUnidadAcademicaId(ObjectId unidadAcademicaId);
 
 }

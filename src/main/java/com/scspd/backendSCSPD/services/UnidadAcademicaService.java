@@ -26,7 +26,7 @@ public class UnidadAcademicaService {
     }
 
     public UnidadAcademica updateUnidadAcademica(ObjectId id, UnidadAcademica unidadAcademica) {
-        unidadAcademica.setIdUnidadAcademica(id);
+        unidadAcademica.setId(id);
         return unidadAcademicaRepository.save(unidadAcademica);
     }
 

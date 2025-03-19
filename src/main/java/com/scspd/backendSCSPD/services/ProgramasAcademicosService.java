@@ -26,7 +26,7 @@ public class ProgramasAcademicosService {
     }
 
     public ProgramasAcademicos updateProgramasAcademicos(ObjectId id, ProgramasAcademicos programasAcademicos) {
-        programasAcademicos.setIdProgramaAcademico(id);
+        programasAcademicos.setId(id);
         return programasAcademicosRepository.save(programasAcademicos);
     }
 

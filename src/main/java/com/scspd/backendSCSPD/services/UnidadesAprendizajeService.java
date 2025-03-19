@@ -26,7 +26,7 @@ public class UnidadesAprendizajeService {
     }
 
     public UnidadesAprendizaje updateUnidadesAprendizaje(ObjectId id, UnidadesAprendizaje unidadesAprendizaje) {
-        unidadesAprendizaje.setIdUnidadesDeAprendizaje(id);
+        unidadesAprendizaje.setId(id);
         return unidadesAprendizajeRepository.save(unidadesAprendizaje);
     }
 
@@ -36,6 +36,10 @@ public class UnidadesAprendizajeService {
 
     public List<UnidadesAprendizaje> getUnidadesAprendizajeByProgramaAcademico(ObjectId programaAcademicoId) {
         return unidadesAprendizajeRepository.findByProgramaAcademicoId(programaAcademicoId);
+    }
+
+    public List<UnidadesAprendizaje> obtenerPorUnidadAcademica(ObjectId unidadAcademicaId) {
+        return unidadesAprendizajeRepository.findByUnidadAcademicaId(unidadAcademicaId);
     }
 
 }

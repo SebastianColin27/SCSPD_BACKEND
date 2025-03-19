@@ -51,4 +51,9 @@ public class PlaneacionesController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/periodo")
+    public List<Planeaciones> filtrarPorPeriodoEscolar(@RequestParam String periodoEscolar) {
+        return planeacionesService.obtenerPorPeriodoEscolar(periodoEscolar);
+    }
 }

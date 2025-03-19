@@ -59,4 +59,13 @@ public class UnidadesAprendizajeController {
         List<UnidadesAprendizaje> unidades = unidadesAprendizajeService.getUnidadesAprendizajeByProgramaAcademico(programaAcademicoId);
         return new ResponseEntity<>(unidades, HttpStatus.OK);
     }
+
+
+    @GetMapping("/unidad/{unidadAcademicaId}")
+    public ResponseEntity<List<UnidadesAprendizaje>> getUnidadesAprendizajeByUnidadAcademica(
+            @PathVariable ObjectId unidadAcademicaId) {
+        List<UnidadesAprendizaje> unidades = unidadesAprendizajeService.obtenerPorUnidadAcademica(unidadAcademicaId);
+        return new ResponseEntity<>(unidades, HttpStatus.OK);
+    }
+
 }

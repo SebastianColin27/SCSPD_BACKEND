@@ -27,11 +27,15 @@ public class PlaneacionesService {
     }
 
     public Planeaciones updatePlaneaciones(ObjectId id, Planeaciones planeaciones) {
-        planeaciones.setIdPlaneacion(id);
+        planeaciones.setId(id);
         return planeacionesRepository.save(planeaciones);
     }
 
     public void deletePlaneaciones(ObjectId id) {
         planeacionesRepository.deleteById(id);
+    }
+
+    public List<Planeaciones> obtenerPorPeriodoEscolar(String periodoEscolar) {
+        return planeacionesRepository.findByPeriodoEscolar(periodoEscolar);
     }
 }
